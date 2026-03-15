@@ -233,7 +233,7 @@ export default function Home() {
           onNodeDoubleClick={onNodeDoubleClick}
           nodeTypes={nodeTypes}
           fitView
-          className="bg-gray-50 dark:bg-gray-900"
+          className="bg-gray-50 dark:bg-gray-100"
         >
           <Background color="#aaa" gap={16} />
           <Controls />
@@ -249,14 +249,14 @@ export default function Home() {
 
           <Panel
             position="top-center"
-            className="bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+            className="bg-white dark:bg-gray-200 px-4 py-2 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
           >
-            <div className="text-sm text-gray-600 dark:text-gray-400">
-              <span className="font-semibold text-gray-900 dark:text-white">
+            <div className="text-sm text-gray-700 dark:text-gray-800">
+              <span className="font-semibold text-gray-00 dark:text-black">
                 {nodes.length}
               </span>{" "}
               nodes •{" "}
-              <span className="font-semibold text-gray-900 dark:text-white">
+              <span className="font-semibold text-gray-900 dark:text-black">
                 {edges.length}
               </span>{" "}
               connections

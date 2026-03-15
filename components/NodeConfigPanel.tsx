@@ -47,19 +47,19 @@ export default function NodeConfigPanel({
   };
 
   return (
-    <div className="fixed inset-y-0 right-0 w-96 bg-white dark:bg-gray-800 shadow-2xl border-l border-gray-200 dark:border-gray-700 z-50 overflow-y-auto">
-      <div className="sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4 flex items-center justify-between">
+    <div className="fixed inset-y-0 right-0 w-96  bg-white dark:bg-gray-200 shadow-2xl border-l border-gray-200 dark:border-gray-700 z-50 overflow-y-auto">
+      <div className=" sticky top-0 bg-white dark:bg-gray-200 border-b border-gray-200 dark:border-gray-700 p-4 flex items-center justify-between">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+          <h3 className="text-lg  font-semibold text-gray-900 dark:text-black">
             Configure Node
           </h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-sm text-gray-500 dark:text-black mt-1 ">
             {definition.label}
           </p>
         </div>
         <button
           onClick={onClose}
-          className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+          className="text-gray-500 hover:text-black-900 dark:text-black dark:hover:text-black-200"
         >
           <X className="h-5 w-5" />
         </button>
@@ -68,7 +68,7 @@ export default function NodeConfigPanel({
       <div className="p-4 space-y-4">
         {definition.configFields.map((field) => (
           <div key={field.name}>
-            <Label className="text-gray-700 dark:text-gray-300">
+            <Label className="text-gray-00 dark:text-black">
               {field.label}
               {field.required && <span className="text-red-500 ml-1">*</span>}
             </Label>
@@ -79,7 +79,7 @@ export default function NodeConfigPanel({
                 value={config[field.name] || field.defaultValue || ""}
                 onChange={(e) => handleChange(field.name, e.target.value)}
                 placeholder={field.placeholder}
-                className="mt-1"
+                className="mt-1 dark:bg-gray-100 dark:text-black"
               />
             )}
 
@@ -89,7 +89,7 @@ export default function NodeConfigPanel({
                 value={config[field.name] || field.defaultValue || ""}
                 onChange={(e) => handleChange(field.name, e.target.value)}
                 placeholder={field.placeholder}
-                className="mt-1"
+                className="mt-1 dark:bg-gray-100 dark:text-black"
               />
             )}
 
@@ -98,7 +98,7 @@ export default function NodeConfigPanel({
                 value={config[field.name] || field.defaultValue || ""}
                 onChange={(e) => handleChange(field.name, e.target.value)}
                 placeholder={field.placeholder}
-                className="mt-1 font-mono text-sm"
+                className="mt-1 font-mono text-sm dark:bg-gray-100 dark:text-black"
                 rows={6}
               />
             )}
@@ -107,7 +107,7 @@ export default function NodeConfigPanel({
               <Select
                 value={config[field.name] || field.defaultValue || ""}
                 onChange={(e) => handleChange(field.name, e.target.value)}
-                className="mt-1"
+                className="mt-1 dark:bg-gray-100 dark:text-black"
               >
                 {field.options?.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -120,20 +120,20 @@ export default function NodeConfigPanel({
         ))}
 
         <div className="pt-4 border-t border-gray-200 dark:border-gray-700 flex gap-2">
-          <Button onClick={handleSave} className="flex-1">
+          <Button onClick={handleSave} className="flex-1 dark:bg-orange-500 hover:bg-orange-600 text-white" >
             Save Configuration
           </Button>
-          <Button onClick={onClose} variant="outline">
+          <Button onClick={onClose} variant="outline" className="dark:text-black hover:bg-gray-500 hover:text-white">
             Cancel
           </Button>
         </div>
 
         {node.data.output && (
-          <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+          <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-100 rounded-lg border border-gray-200 ">
+            <h4 className="text-sm font-semibold text-gray-700 dark:text-black mb-2">
               Last Output
             </h4>
-            <pre className="text-xs text-gray-600 dark:text-gray-400 overflow-x-auto">
+            <pre className="text-xs text-gray-600 dark:text-black overflow-x-auto">
               {JSON.stringify(node.data.output, null, 2)}
             </pre>
           </div>

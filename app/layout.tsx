@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "FlowGen - Workflow Automation",
   description: "A minimal n8n-like workflow automation tool with AI nodes",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
